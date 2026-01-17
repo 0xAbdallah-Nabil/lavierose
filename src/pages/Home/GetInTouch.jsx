@@ -1,4 +1,4 @@
-
+import logo from "../../assets/imgs/GetInTouch.jpg";
 import { Link } from "react-router-dom";
 function GetInTouch() {
   return (
@@ -6,6 +6,7 @@ function GetInTouch() {
       <div className="absolute inset-0 w-full h-full">
         <img
           className="absolute inset-0 w-full h-full object-cover"
+          src={logo}
           rel="preload"
           alt="La Vie Rose Logo"
         />
