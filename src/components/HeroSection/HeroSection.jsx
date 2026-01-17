@@ -1,6 +1,5 @@
 import "./style.css";
-import video from "../../assets/videos/hero-video.mp4";
-
+const videoUrl = "https://res.cloudinary.com/dk1q6kpkk/video/upload/q_auto,f_auto/hero-video_uvkkim.mp4";
 function HeroSection() {
   return (
     <main className="relative flex justify-center items-center h-[70vh] w-full overflow-hidden">
@@ -12,7 +11,7 @@ function HeroSection() {
           
           playsInline
         >
-          <source src={video} type="video/mp4" />
+          <source src={videoUrl} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 bg-black opacity-50"></div>
