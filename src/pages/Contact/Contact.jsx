@@ -13,10 +13,13 @@ function Contact() {
             alt="La Vie Rose Logo"
           />
           <div className="absolute inset-0 bg-black opacity-50"></div>
-        </div>
+        </div >
         <h1 className=" text-center w-full px-4 text-base sm:text-2xl md:text-3xl font-bold text-white z-10">
-          Contact Us
+          Ready to turn your vision into reality?
         </h1>
+        <p>
+          Let’s connect and start planning an unforgettable experience together!
+        </p>
       </main>
       <ContactForm />
     </>

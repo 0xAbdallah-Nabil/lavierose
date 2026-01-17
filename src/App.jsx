@@ -13,7 +13,7 @@ import Home from "./pages/Home/Home";
 function App() {
   return (
     <>
-      <Router basename="/LaVieRose">
+      <Router>
         <div className="flex flex-col min-h-screen">
           <Header />
           <main className="flex-1 ">
