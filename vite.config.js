@@ -4,15 +4,6 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: "/", // Changed from "/lavierose/"
-  build: {
-    chunkSizeWarningLimit: 1000,
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          vendor: ["react", "react-dom"],
-        },
-      },
-    },
-  },
+  // eslint-disable-next-line no-undef
+  base: process.env.VITE_BASE_PATH || "/lavierose",
 });
