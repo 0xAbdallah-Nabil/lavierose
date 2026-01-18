@@ -1,4 +1,4 @@
-import logo from "../../assets/imgs/GetInTouch.jpg";
+import logo from "../../assets/imgs/getintouch.jpg";
 import { Link } from "react-router-dom";
 function GetInTouch() {
   return (
