@@ -7,7 +7,7 @@ function DesktopNav() {
         <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <NavLink to="/services">Services</NavLink>
+        <NavLink to="/services">Styling</NavLink>
       </li>
       <li>
         <NavLink to="/service-package">Service package</NavLink>

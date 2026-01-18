@@ -3,7 +3,7 @@ import RoseBouquet from "./pages/RoseBouquet/RoseBouquet";
 import OurStory from "./pages/OurStory/OurStory";
 import Contact from "./pages/Contact/Contact";
 import DecoreHire from "./pages/DecorHire/DecoreHire";
-import WeddingAndEvents from "./pages/WeddingsAndEvents/WeddingsAndEvents";
+import ServicesPage from "./pages/ServicesPage/ServicesPage";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import CartPage from "./pages/CartPage/CartPage";
@@ -24,7 +24,7 @@ function App() {
               <Route path="/photo-gallery" element={<OurStory />} />
               <Route path="/contact-us" element={<Contact />} />
               <Route path="/decor-hire" element={<DecoreHire />} />
-              <Route path="/services" element={<WeddingAndEvents />} />
+              <Route path="/services" element={<ServicesPage />} />
               <Route path="/cart-page" element={<CartPage />} />
             </Routes>
           </main>

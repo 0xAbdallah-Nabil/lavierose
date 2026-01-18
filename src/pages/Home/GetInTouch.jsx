@@ -16,7 +16,7 @@ function GetInTouch() {
         <h1 className="normal text-center w-full px-4 text-base sm:text-2xl md:text-5xl font-bold text-white z-10">
           Get In Touch
         </h1>
-        <Link to="/contact">
+        <Link to="/contact-us">
           <button className=" bottom-10 px-6 py-3 bg-white text-black font-semibold rounded-full hover:bg-gray-500  hover:text-white transition z-10">
             Contact Us
           </button>
