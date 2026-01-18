@@ -19,15 +19,12 @@ function App() {
           <main className="flex-1 ">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/Rose-Bouquet" element={<RoseBouquet />} />
+              <Route path="/service-package" element={<RoseBouquet />} />
               <Route path="/checkout" element={<CheckOut />} />
-              <Route path="/our-story" element={<OurStory />} />
+              <Route path="/photo-gallery" element={<OurStory />} />
               <Route path="/contact-us" element={<Contact />} />
               <Route path="/decor-hire" element={<DecoreHire />} />
-              <Route
-                path="/wedding-and-events"
-                element={<WeddingAndEvents />}
-              />
+              <Route path="/services" element={<WeddingAndEvents />} />
               <Route path="/cart-page" element={<CartPage />} />
             </Routes>
           </main>

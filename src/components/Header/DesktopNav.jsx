@@ -7,10 +7,10 @@ function DesktopNav() {
         <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <NavLink to="/wedding-and-events">Wedding & Events</NavLink>
+        <NavLink to="/services">Services</NavLink>
       </li>
       <li>
-        <NavLink to="/rose-bouquet">Rose Bouquet</NavLink>
+        <NavLink to="/service-package">Service package</NavLink>
       </li>
       <li>
         <Link to="/">
@@ -21,7 +21,7 @@ function DesktopNav() {
         <NavLink to="/decor-hire">Decor Hire</NavLink>
       </li>
       <li>
-        <NavLink to="/our-story">Our Story</NavLink>
+        <NavLink to="/photo-gallery">Photo gallery</NavLink>
       </li>
       <li>
         <NavLink to="/contact-us">Contact</NavLink>
