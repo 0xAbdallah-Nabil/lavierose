@@ -7,16 +7,16 @@ function MobileNav({ setIsOpen }) {
           <NavLink to="/">Home</NavLink>
         </li>
         <li onClick={() => setIsOpen(false)}>
-          <NavLink to="/wedding-and-events">Wedding & Events</NavLink>
+          <NavLink to="/services">Services</NavLink>
         </li>
         <li onClick={() => setIsOpen(false)}>
-          <NavLink to="/rose-bouquet">Rose Bouquet</NavLink>
+          <NavLink to="/service-package">Service Package</NavLink>
         </li>
         <li onClick={() => setIsOpen(false)}>
           <NavLink to="/decor-hire">Decor Hire</NavLink>
         </li>
         <li onClick={() => setIsOpen(false)}>
-          <NavLink to="/our-story">Our Story</NavLink>
+          <NavLink to="/photo-gallery">Photo Gallery</NavLink>
         </li>
         <li onClick={() => setIsOpen(false)}>
           <NavLink to="/contact-us">Contact</NavLink>
