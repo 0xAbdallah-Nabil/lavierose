@@ -12,9 +12,7 @@ function MobileNav({ setIsOpen }) {
         <li onClick={() => setIsOpen(false)}>
           <NavLink to="/service-package">Service Package</NavLink>
         </li>
-        <li onClick={() => setIsOpen(false)}>
-          <NavLink to="/decor-hire">Decor Hire</NavLink>
-        </li>
+
         <li onClick={() => setIsOpen(false)}>
           <NavLink to="/our-story">Our Story</NavLink>
         </li>
