@@ -2,7 +2,7 @@ import logo from "../../assets/imgs/logo-enhanced.png";
 import { Link, NavLink } from "react-router-dom";
 function DesktopNav() {
   return (
-    <ul className="hidden md:flex gap-10 text-[24px] font- items-center logo z-10">
+    <ul className="hidden md:flex gap-10 text-[24px] font- items-center normal z-10">
       <li>
         <NavLink to="/">Home</NavLink>
       </li>
@@ -21,7 +21,7 @@ function DesktopNav() {
         <NavLink to="/decor-hire">Decor Hire</NavLink>
       </li>
       <li>
-        <NavLink to="/photo-gallery">Photo gallery</NavLink>
+        <NavLink to="/our-story">Our Story</NavLink>
       </li>
       <li>
         <NavLink to="/contact-us">Contact</NavLink>
