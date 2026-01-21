@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import RoseBouquet from "./pages/RoseBouquet/RoseBouquet";
+import ServicePackage from "./pages/ServicePackages/ServicePackage";
 import OurStory from "./pages/OurStory/OurStory";
 import Contact from "./pages/Contact/Contact";
 import DecoreHire from "./pages/DecorHire/DecoreHire";
@@ -19,7 +19,7 @@ function App() {
           <main className="flex-1 ">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/service-package" element={<RoseBouquet />} />
+              <Route path="/service-package" element={<ServicePackage />} />
               <Route path="/checkout" element={<CheckOut />} />
               <Route path="/our-story" element={<OurStory />} />
               <Route path="/contact-us" element={<Contact />} />

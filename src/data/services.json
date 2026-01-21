@@ -1,0 +1,162 @@
+{
+  "services": [
+    {
+      "id": 1,
+      "icon": "❤️",
+      "title": "Wedding Styling",
+      "shortDesc": "Celebrating love with elegance and refined detail",
+      "description": "Our wedding styling is a celebration of love, elegance, and refined detail. Every element is thoughtfully curated to reflect your story, creating a seamless and luxurious atmosphere that feels romantic, personal, and beautifully unforgettable from the first moment to the last.",
+      "images": [
+        "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800&q=80",
+        "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=800&q=80",
+        "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=800&q=80",
+        "https://images.unsplash.com/photo-1487070183336-b863922373d4?w=800&q=80",
+        "https://images.unsplash.com/photo-1487070183336-b863922373d4?w=800&q=80"
+      ],
+      "gradient": "from-rose-500 to-pink-600"
+    },
+    {
+      "id": 2,
+      "icon": "🌸",
+      "title": "Floral Styling",
+      "shortDesc": "Artistry meets romance in every bloom",
+      "description": "Our floral styling blends artistry with romance, using fresh and premium faux blooms to create soft, elegant arrangements. Each design is carefully composed to enhance your space, adding texture, movement, and timeless beauty to every celebration.",
+      "images": [
+        "https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=800&q=80",
+        "https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?w=800&q=80",
+        "https://images.unsplash.com/photo-1487070183336-b863922373d4?w=800&q=80"
+      ],
+      "gradient": "from-pink-500 to-rose-600"
+    },
+    {
+      "id": 3,
+      "icon": "🎉",
+      "title": "Event Styling (Balloon & Props)",
+      "shortDesc": "Elevated installations with bespoke details",
+      "description": "We create elevated event styling using bespoke balloon installations, curated props, and refined details. Designed with balance and elegance, our setups transform celebrations into luxurious experiences, where every element feels intentional, harmonious, and visually captivating.",
+      "images": [
+        "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80",
+        "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&q=80",
+        "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80"
+      ],
+      "gradient": "from-purple-500 to-pink-600"
+    },
+    {
+      "id": 4,
+      "icon": "🏡",
+      "title": "Bridal, Bride & Groom House Styling",
+      "shortDesc": "Creating intimate, elegant atmospheres at home",
+      "description": "We style bridal and groom homes with romantic florals, soft textures, and personalised details. Our designs create a warm, elegant atmosphere—perfect for intimate moments, meaningful traditions, and timeless photographs to be cherished forever.",
+      "images": [
+        "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=800&q=80",
+        "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=800&q=80",
+        "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80"
+      ],
+      "gradient": "from-rose-600 to-pink-700"
+    },
+    {
+      "id": 5,
+      "icon": "⛪",
+      "title": "Ceremony Styling",
+      "shortDesc": "Romantic, serene, unforgettable moments",
+      "description": "Our ceremony styling is designed to feel romantic, serene, and unforgettable. From floral-lined aisles to statement backdrops, every detail is thoughtfully arranged to create a luxurious setting where love takes centre stage and memories are made.",
+      "images": [
+        "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&q=80",
+        "https://images.unsplash.com/photo-1519167758481-83f29da8c3f6?w=800&q=80",
+        "https://images.unsplash.com/photo-1478146896981-b80fe463b330?w=800&q=80"
+      ],
+      "gradient": "from-indigo-500 to-purple-600"
+    },
+    {
+      "id": 6,
+      "icon": "🎂",
+      "title": "Birthdays",
+      "shortDesc": "Celebrate life's special moments with joy",
+      "description": "Transform birthday celebrations into magical experiences with our creative styling. From whimsical children's parties to sophisticated adult gatherings, we design unforgettable moments filled with color, creativity, and pure celebration.",
+      "images": [
+        "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&q=80",
+        "https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=800&q=80",
+        "https://images.unsplash.com/photo-1558636508-e0db3814bd1d?w=800&q=80"
+      ],
+      "gradient": "from-yellow-500 to-orange-600"
+    },
+    {
+      "id": 7,
+      "icon": "🎁",
+      "title": "Bridal Shower",
+      "shortDesc": "Elegant pre-wedding celebrations",
+      "description": "Honor the bride-to-be with beautifully styled bridal showers. Our designs create an atmosphere of love, laughter, and anticipation, featuring delicate details and refined touches that make this special gathering truly memorable.",
+      "images": [
+        "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800&q=80",
+        "https://images.unsplash.com/photo-1481653125770-b78c206c59d4?w=800&q=80",
+        "https://images.unsplash.com/photo-1460978812857-470ed1c77af0?w=800&q=80"
+      ],
+      "gradient": "from-pink-400 to-rose-500"
+    },
+    {
+      "id": 8,
+      "icon": "📸",
+      "title": "Centrepieces and Welcome Sign",
+      "shortDesc": "First impressions that captivate",
+      "description": "Create stunning focal points with our bespoke centrepieces and welcoming signage. Each piece is carefully crafted to set the tone, guide your guests, and add that perfect finishing touch to your celebration.",
+      "images": [
+        "https://images.unsplash.com/photo-1478146896981-b80fe463b330?w=800&q=80",
+        "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&q=80",
+        "https://images.unsplash.com/photo-1519167758481-83f29da8c3f6?w=800&q=80"
+      ],
+      "gradient": "from-teal-500 to-cyan-600"
+    },
+    {
+      "id": 9,
+      "icon": "✝️",
+      "title": "Christening and Holy Communion",
+      "shortDesc": "Sacred moments beautifully honored",
+      "description": "Celebrate spiritual milestones with reverent and beautiful styling. Our designs honor the significance of these sacred occasions while creating a warm, welcoming atmosphere for family and friends to gather.",
+      "images": [
+        "https://images.unsplash.com/photo-1519167758481-83f29da8c3f6?w=800&q=80",
+        "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80",
+        "https://images.unsplash.com/photo-1478146896981-b80fe463b330?w=800&q=80"
+      ],
+      "gradient": "from-blue-500 to-indigo-600"
+    },
+    {
+      "id": 10,
+      "icon": "💍",
+      "title": "Engagement and Henna",
+      "shortDesc": "Cultural traditions meets modern elegance",
+      "description": "Honor cultural traditions with beautifully styled engagement and henna ceremonies. Our designs blend traditional elements with contemporary elegance, creating meaningful celebrations that honor heritage.",
+      "images": [
+        "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800&q=80",
+        "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=800&q=80",
+        "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80"
+      ],
+      "gradient": "from-orange-500 to-red-600"
+    },
+    {
+      "id": 11,
+      "icon": "👶",
+      "title": "Gender Reveal, Baby Welcoming",
+      "shortDesc": "Joyful celebrations of new beginnings",
+      "description": "Mark the beginning of your family's newest chapter with our enchanting gender reveal and baby welcoming events. Filled with anticipation, joy, and sweet details that celebrate new life.",
+      "images": [
+        "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=800&q=80",
+        "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&q=80",
+        "https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=800&q=80"
+      ],
+      "gradient": "from-blue-400 to-pink-400"
+    },
+    {
+      "id": 12,
+      "icon": "🎓",
+      "title": "Graduation and Grand Opening",
+      "shortDesc": "Milestone achievements celebrated in style",
+      "description": "Commemorate major achievements with sophisticated styling for graduations and grand openings. Our designs create an atmosphere of success, pride, and excitement for new chapters ahead.",
+      "images": [
+        "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80",
+        "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80",
+        "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80"
+      ],
+      "gradient": "from-green-500 to-emerald-600"
+    }
+  ]
+}
