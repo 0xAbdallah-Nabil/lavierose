@@ -9,7 +9,7 @@ import Header from "./components/Header/Header";
 import CartPage from "./pages/CartPage/CartPage";
 import CheckOut from "./pages/CheckOut/CheckOut";
 import Home from "./pages/Home/Home";
-
+import AboutUsSection from "./pages/OurStory/OurStory.jsx";
 function App() {
   return (
     <>
@@ -21,7 +21,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/service-package" element={<ServicePackage />} />
               <Route path="/checkout" element={<CheckOut />} />
-              <Route path="/our-story" element={<OurStory />} />
+              <Route path="/our-story" element={<AboutUsSection />} />
               <Route path="/contact-us" element={<Contact />} />
               <Route path="/decor-hire" element={<DecoreHire />} />
               <Route path="/services" element={<ServicesPage />} />
