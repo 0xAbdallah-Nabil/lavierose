@@ -33,16 +33,16 @@ function ServicesSection() {
     },
     {
       id: 3,
-      title: "Luxury Rentals",
-      subtitle: "Exquisite Details",
+      title: "Our Story",
+      subtitle: "",
       description:
-        "Access our exclusive collection of premium décor and furniture pieces.",
-      cta: "Browse Collection",
+        "Discover the passion and dedication behind La Vie Rose.",
+      cta: "Explore Now",
       icon: ShoppingBag,
       gradient: "from-amber-500 via-rose-500 to-pink-500",
       image:
         "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80",
-      to: "/decor-hire",
+      to: "/our-story",
     },
   ];
 
