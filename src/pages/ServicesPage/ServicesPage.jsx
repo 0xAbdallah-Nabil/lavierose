@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import logo from "../../assets/imgs/wedding.jpg";
 import servicesData from "../../data/services.json";
 import HeroSection from "./HeroSection";
+import { Link } from "lucide-react";
+import { Link as RouterLink } from "react-router-dom";
 // Sample data - replace with your actual imports in your project
 
 function ServicesPage() {
@@ -313,7 +315,10 @@ function ServicesPage() {
             Let's bring your vision to life. Whether it's an intimate
             celebration or a grand affair, we're here to make it unforgettable.
           </p>
-          <button className="inline-flex items-center gap-3 px-10 py-4 bg-gradient-to-r from-rose-900 to-rose-800 text-white rounded-full font-light tracking-wide hover:shadow-2xl hover:shadow-rose-900/30 transition-all duration-300 text-lg group">
+          <RouterLink
+            to="/contact-us"
+            className="inline-flex items-center gap-3 px-10 py-4 bg-gradient-to-r from-rose-900 to-rose-800 text-white rounded-full font-light tracking-wide hover:shadow-2xl hover:shadow-rose-900/30 transition-all duration-300 text-lg group"
+          >
             Get in Touch
             <svg
               className="w-5 h-5 group-hover:translate-x-2 transition-transform"
@@ -328,7 +333,7 @@ function ServicesPage() {
                 d="M14 5l7 7m0 0l-7 7m7-7H3"
               />
             </svg>
-          </button>
+          </RouterLink>
 
           {/* Decorative element */}
           <div className="flex justify-center mt-12">

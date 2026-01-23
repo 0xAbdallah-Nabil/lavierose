@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { Link } from "react-router-dom";
 function ServicePackage() {
   const [selectedPackage, setSelectedPackage] = useState(null);
 
@@ -240,10 +240,13 @@ function ServicePackage() {
             Every celebration is unique. If our standard packages don't quite
             fit your vision, we'd love to create something bespoke just for you.
           </p>
-          <button className="px-8 py-4 bg-gradient-to-r from-rose-900 to-rose-800 text-white rounded-full font-medium hover:shadow-2xl hover:shadow-rose-900/30 transition-all inline-flex items-center gap-2">
+          <Link
+            to="/contact-us"
+            className="px-8 py-4 bg-gradient-to-r from-rose-900 to-rose-800 text-white rounded-full font-medium hover:shadow-2xl hover:shadow-rose-900/30 transition-all inline-flex items-center gap-2"
+          >
             Contact Us
             <span>💌</span>
-          </button>
+          </Link>
         </div>
       </section>
     </div>
