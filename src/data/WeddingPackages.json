@@ -1,0 +1,120 @@
+{
+  "WeddingPackages": [
+    {
+      "id": 1,
+      "name": "Small Wedding Package",
+      "price": "$1,100–$1,900",
+      "subtitle": "Intimate and elegant, perfect for cherished celebrations with your closest loved ones.",
+      "description": "Create beautiful memories with an intimate celebration designed for your closest family and friends. Every detail thoughtfully curated to make your special day unforgettable.",
+      "image": "https://i.ibb.co/Mx5gF5Hv/DJI-20251010-153305-369.jpg",
+      "icon": "💝",
+      "gradient": "from-rose-400 to-pink-500",
+      "includes": [
+        "Bride & Groom Houses: 3×3 m drapes",
+        "Bride & groom mannequins",
+        "1–3 plinths",
+        "1 floral arrangement per house",
+        "Church/Ceremony: Seating styling for up to 12 pews",
+        "Venue: Bridal table (up to 3 m) adorned with 6–10 floral arrangements",
+        "20–40 glowing floor candles"
+      ],
+      "addOns": [
+        "Groom armchair",
+        "French antique mirror",
+        "Centrepieces",
+        "Venue drapes",
+        "Signage",
+        "Additional candles"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Standard Wedding Package",
+      "price": "$2,500–$4,500",
+      "subtitle": "Elegant and refined, perfect for medium-sized weddings or larger venues.",
+      "description": "A perfect balance of elegance and sophistication for medium-sized celebrations. Create timeless memories with refined styling and beautiful floral arrangements throughout your venue.",
+      "image": "https://i.ibb.co/PGQpJP7F/8-CF9-D554-D52-F-4-C89-8-B0-F-8556-E9574-C9-F.jpg",
+      "icon": "💍",
+      "gradient": "from-pink-500 to-rose-500",
+      "includes": [
+        "Bride & Groom Houses: Drapes 3–6 m",
+        "1 arch with 2 floral arrangements",
+        "3 plinths, mannequins, armchair",
+        "French antique mirror",
+        "Outdoor carpet",
+        "2–4 urns",
+        "Church/Ceremony: Up to 12 pews styled",
+        "2 urns at entrance",
+        "Venue: Bridal table (up to 5 m) with 8–10 floral arrangements",
+        "40–60 floor candles",
+        "4–10 centrepieces for family or long tables"
+      ],
+      "addOns": [
+        "Extra centrepieces",
+        "Venue drapes",
+        "Signage",
+        "Additional floral arrangements"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Luxury Wedding Package",
+      "price": "$4,500–$6,500+",
+      "subtitle": "Lavish and unforgettable, designed to create breathtaking moments.",
+      "description": "Experience the pinnacle of wedding elegance with our luxury package. Every space of your wedding day transformed into a breathtaking celebration of your love story.",
+      "image": "https://i.ibb.co/bgs3pTrm/IMG-6304.jpg",
+      "popular": false,
+      "icon": "👑",
+      "gradient": "from-rose-500 to-pink-600",
+      "includes": [
+        "Bride & Groom Houses: Drapes 6–12 m",
+        "1–2 arches per house",
+        "3–5 floral arrangements",
+        "Mannequins, armchair, French antique mirror",
+        "Outdoor décor and entry carpet",
+        "Church/Ceremony: Styling for up to 20 pews",
+        "Grand entrance arch",
+        "Venue: Full bridal table styling",
+        "4–10 centrepieces & candles",
+        "Venue entry arch",
+        "70–120 floor candles"
+      ],
+      "addOns": [
+        "Additional centrepieces",
+        "Venue drapes",
+        "Signage",
+        "Extra floral arrangements"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Bespoke Wedding Package",
+      "price": "From $7,000",
+      "subtitle": "The ultimate in romance and luxury, designed entirely around your dreams.",
+      "description": "Your wedding, your way. Every detail, every colour, every element curated to create a wedding as unique as your love story. This is where dreams become reality.",
+      "image": "https://i.ibb.co/LX75BzyN/Elegant-wedding-branding-design.png",
+      "icon": "✨",
+      "gradient": "from-pink-600 to-purple-600",
+      "includes": [
+        "Bride & Groom Houses: Custom draping (8–12 m)",
+        "Arches with up to 5 floral arrangements per house",
+        "Mannequins, armchair, French antique mirror",
+        "Entry carpet and outdoor décor perfectly matching your theme",
+        "Church/Ceremony: Stunning entrance arch",
+        "Styling for up to 20 pews",
+        "Venue: Fully customised bridal table",
+        "12 long-table centrepieces",
+        "Clear table candles",
+        "Venue entry florals",
+        "Signage and seating chart",
+        "Every detail crafted to your wishes, for a truly one-of-a-kind celebration"
+      ],
+      "addOns": [
+        "Sky is the limit - any custom element you can dream of",
+        "Specialty lighting installations",
+        "Live floral walls",
+        "Premium designer touches"
+      ]
+    }
+  ]
+}

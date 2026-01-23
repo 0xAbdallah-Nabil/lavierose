@@ -13,6 +13,7 @@ import AboutUsSection from "./pages/OurStory/OurStory.jsx";
 import TermsAndConditions from "./pages/TermsAndConditions/TermsAndConditions.jsx";
 import PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPloicy.jsx";
 import EventsPackages from "./pages/EventsPackages/EventsPackages.jsx";
+import WeddingPackages from "./pages/WeddingPackages/WeddingsPackages.jsx";
 function App() {
   return (
     <>
@@ -35,6 +36,7 @@ function App() {
               />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/events-packages" element={<EventsPackages />} />
+              <Route path="/wedding-packages" element={<WeddingPackages />} />
             </Routes>
           </main>
           <Footer />

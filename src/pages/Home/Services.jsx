@@ -35,8 +35,7 @@ function ServicesSection() {
       id: 3,
       title: "Our Story",
       subtitle: "",
-      description:
-        "Discover the passion and dedication behind La Vie Rose.",
+      description: "Discover the passion and dedication behind La Vie Rose.",
       cta: "Explore Now",
       icon: ShoppingBag,
       gradient: "from-amber-500 via-rose-500 to-pink-500",
@@ -146,7 +145,7 @@ function ServicesSection() {
 
         {/* Bottom decorative element */}
         <div className="flex items-center justify-center mt-8">
-          <div className="h-px w-20 bg-gradient-to-r from-transparent to-rose-200"></div>
+          <div className="h-px w-20 bg-linear-to-r from-transparent to-rose-200"></div>
           <div className="mx-2">
             <svg
               className="w-4 h-4 text-rose-400"
@@ -156,7 +155,7 @@ function ServicesSection() {
               <path d="M10 3.5a1.5 1.5 0 013 0V4a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-.5a1.5 1.5 0 000 3h.5a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-.5a1.5 1.5 0 00-3 0v.5a1 1 0 01-1 1H6a1 1 0 01-1-1v-3a1 1 0 00-1-1h-.5a1.5 1.5 0 010-3H4a1 1 0 001-1V6a1 1 0 011-1h3a1 1 0 001-1v-.5z" />
             </svg>
           </div>
-          <div className="h-px w-20 bg-gradient-to-l from-transparent to-rose-200"></div>
+          <div className="h-px w-20 bg-linear-to-l from-transparent to-rose-200"></div>
         </div>
       </div>
     </section>
