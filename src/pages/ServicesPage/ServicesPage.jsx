@@ -2,13 +2,17 @@ import React, { useState, useEffect } from "react";
 import logo from "../../assets/imgs/wedding.jpg";
 import servicesData from "../../data/services.json";
 import HeroSection from "./HeroSection";
+// Sample data - replace with your actual imports in your project
+
 function ServicesPage() {
   const [activeService, setActiveService] = useState(null);
   const [selectedService, setSelectedService] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [imageLoadStatus, setImageLoadStatus] = useState({});
 
   const services = servicesData.services;
 
+  // Auto-play slider
   useEffect(() => {
     if (!selectedService) return;
 
@@ -21,14 +25,22 @@ function ServicesPage() {
     return () => clearInterval(interval);
   }, [selectedService, currentImageIndex]);
 
-  const openSlider = (service) => {
-    setSelectedService(service);
-    setCurrentImageIndex(0);
-  };
-
+  // Preload images for better performance
+  useEffect(() => {
+    if (selectedService) {
+      selectedService.images.forEach((src) => {
+        const img = new Image();
+        img.onload = () => {
+          setImageLoadStatus((prev) => ({ ...prev, [src]: true }));
+        };
+        img.src = src;
+      });
+    }
+  }, [selectedService]);
   const closeSlider = () => {
     setSelectedService(null);
     setCurrentImageIndex(0);
+    setImageLoadStatus({});
   };
 
   const nextImage = () => {
@@ -43,8 +55,27 @@ function ServicesPage() {
     );
   };
 
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      if (!selectedService) return;
+      if (e.key === "ArrowLeft") prevImage();
+      if (e.key === "ArrowRight") nextImage();
+      if (e.key === "Escape") closeSlider();
+    };
+
+    window.addEventListener("keydown", handleKeyPress);
+    return () => window.removeEventListener("keydown", handleKeyPress);
+  }, [selectedService, currentImageIndex]);
+
+  const openSlider = (service) => {
+    setSelectedService(service);
+    setCurrentImageIndex(0);
+    setImageLoadStatus({});
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white via-rose-50/30 to-white">
+    <div className="min-h-screen  from-white via-rose-50/30 to-white">
       <main className="relative flex justify-center items-center h-[50vh] w-full overflow-hidden">
         <div className="absolute inset-0 w-full h-full">
           <img
@@ -80,6 +111,7 @@ function ServicesPage() {
                   src={service.images[0]}
                   alt={service.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
 
@@ -135,15 +167,17 @@ function ServicesPage() {
         </div>
       </section>
 
-      {/* Image Slider Modal */}
+      {/* Image Slider Modal - OPTIMIZED */}
       {selectedService && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm animate-fadeIn">
+          {/* Close Button - Enhanced transition */}
           <button
             onClick={closeSlider}
-            className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 flex items-center justify-center transition-all z-50"
+            className="absolute top-4 right-4 md:top-6 md:right-6 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 hover:rotate-90 flex items-center justify-center transition-all duration-300 z-50"
+            aria-label="Close slider"
           >
             <svg
-              className="w-6 h-6 text-white"
+              className="w-5 h-5 md:w-6 md:h-6 text-white transition-transform duration-300"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -157,30 +191,49 @@ function ServicesPage() {
             </svg>
           </button>
 
-          <div className="relative w-full max-w-5xl mx-4">
-            {/* Service Title */}
-            <div className="text-center mb-6">
-              <h2 className="text-3xl md:text-4xl font-serif text-white mb-2">
+          {/* Reduced from max-w-5xl to max-w-4xl */}
+          <div className="relative w-full max-w-4xl mx-4">
+            {/* Service Title - Reduced size */}
+            <div className="text-center mb-4 md:mb-6">
+              <h2 className="text-2xl md:text-3xl font-serif text-white mb-2">
                 {selectedService.title}
               </h2>
-              <p className="text-rose-300">{selectedService.shortDesc}</p>
+              <p className="text-sm md:text-base text-rose-300">
+                {selectedService.shortDesc}
+              </p>
             </div>
 
-            {/* Image Container */}
-            <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl">
+            {/* Image Container - Optimized loading */}
+            <div className="relative aspect-video rounded-xl md:rounded-2xl overflow-hidden shadow-2xl bg-black/20">
+              {/* Loading indicator */}
+              {!imageLoadStatus[selectedService.images[currentImageIndex]] && (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-12 h-12 border-4 border-rose-500 border-t-transparent rounded-full animate-spin"></div>
+                </div>
+              )}
+
               <img
                 src={selectedService.images[currentImageIndex]}
                 alt={`${selectedService.title} ${currentImageIndex + 1}`}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-opacity duration-300"
+                style={{
+                  opacity: imageLoadStatus[
+                    selectedService.images[currentImageIndex]
+                  ]
+                    ? 1
+                    : 0,
+                }}
+                loading="eager"
               />
 
-              {/* Navigation Buttons */}
+              {/* Navigation Buttons - Enhanced transitions */}
               <button
                 onClick={prevImage}
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 flex items-center justify-center transition-all"
+                className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 hover:scale-110 flex items-center justify-center transition-all duration-300 group"
+                aria-label="Previous image"
               >
                 <svg
-                  className="w-6 h-6 text-white"
+                  className="w-5 h-5 md:w-6 md:h-6 text-white group-hover:-translate-x-0.5 transition-transform duration-300"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -195,10 +248,11 @@ function ServicesPage() {
               </button>
               <button
                 onClick={nextImage}
-                className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 flex items-center justify-center transition-all"
+                className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 hover:scale-110 flex items-center justify-center transition-all duration-300 group"
+                aria-label="Next image"
               >
                 <svg
-                  className="w-6 h-6 text-white"
+                  className="w-5 h-5 md:w-6 md:h-6 text-white group-hover:translate-x-0.5 transition-transform duration-300"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -213,29 +267,31 @@ function ServicesPage() {
               </button>
 
               {/* Image Counter */}
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/50 backdrop-blur-sm px-4 py-2 rounded-full">
-                <span className="text-white text-sm font-medium">
+              <div className="absolute bottom-3 md:bottom-4 left-1/2 -translate-x-1/2 bg-black/50 backdrop-blur-sm px-3 md:px-4 py-1.5 md:py-2 rounded-full">
+                <span className="text-white text-xs md:text-sm font-medium">
                   {currentImageIndex + 1} / {selectedService.images.length}
                 </span>
               </div>
             </div>
 
-            {/* Thumbnail Navigation */}
-            <div className="flex justify-center gap-3 mt-6">
+            {/* Thumbnail Navigation - Smaller size */}
+            <div className="flex justify-center gap-2 md:gap-3 mt-4 md:mt-6 flex-wrap">
               {selectedService.images.map((img, idx) => (
                 <button
                   key={idx}
                   onClick={() => setCurrentImageIndex(idx)}
-                  className={`w-16 h-16 rounded-lg overflow-hidden transition-all ${
+                  className={`w-12 h-12 md:w-16 md:h-16 rounded-lg overflow-hidden transition-all duration-300 ${
                     idx === currentImageIndex
-                      ? "ring-4 ring-rose-500 scale-110"
-                      : "opacity-50 hover:opacity-100"
+                      ? "ring-2 md:ring-4 ring-rose-500 scale-105 md:scale-110"
+                      : "opacity-50 hover:opacity-100 hover:scale-105"
                   }`}
+                  aria-label={`View image ${idx + 1}`}
                 >
                   <img
                     src={img}
                     alt={`Thumbnail ${idx + 1}`}
                     className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                 </button>
               ))}
@@ -289,6 +345,21 @@ function ServicesPage() {
           </div>
         </div>
       </section>
+
+      {/* Add fadeIn animation styles */}
+      <style>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+        .animate-fadeIn {
+          animation: fadeIn 0.3s ease-out;
+        }
+      `}</style>
     </div>
   );
 }
