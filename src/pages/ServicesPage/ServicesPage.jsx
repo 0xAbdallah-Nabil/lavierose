@@ -7,7 +7,7 @@ import { Link as RouterLink } from "react-router-dom";
 // Sample data - replace with your actual imports in your project
 
 function ServicesPage() {
-  const [activeService, setActiveService] = useState(null);
+  const [, setActiveService] = useState(null);
   const [selectedService, setSelectedService] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [imageLoadStatus, setImageLoadStatus] = useState({});
@@ -117,14 +117,6 @@ function ServicesPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
 
-                {/* Floating Icon */}
-                <div className="absolute top-6 right-6">
-                  <div
-                    className={`w-14 h-14 rounded-full bg-gradient-to-br ${service.gradient} flex items-center justify-center shadow-xl transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12`}
-                  >
-                    <span className="text-2xl">{service.icon}</span>
-                  </div>
-                </div>
 
                 {/* Number Badge */}
                 <div className="absolute top-6 left-6">
@@ -154,16 +146,6 @@ function ServicesPage() {
                 </p>
               </div>
 
-              {/* Animated border */}
-              <div
-                className={`absolute inset-0 rounded-3xl transition-opacity duration-500 pointer-events-none ${
-                  activeService === service.id ? "opacity-100" : "opacity-0"
-                }`}
-              >
-                <div
-                  className={`absolute inset-0 rounded-3xl border-2 bg-gradient-to-r ${service.gradient} opacity-50`}
-                ></div>
-              </div>
             </div>
           ))}
         </div>

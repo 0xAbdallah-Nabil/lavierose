@@ -1,0 +1,107 @@
+{
+    "eventsPackages": [
+      {
+        "id": 1,
+        "name": "Small Package",
+        "subtitle": "Intimate & Elegant",
+        "price": "$400 - $600",
+        "description": "Perfect for intimate celebrations and smaller spaces. A simple, stylish setup to make your event shine.",
+        "gradient": "from-purple-600 to-purple-800",
+        "icon": "🌸",
+        "image": "https://i.ibb.co/ynJRgfLS/Writing.png",
+        "includes": [
+          "1 styled backdrop",
+          "1–3 cake plinths",
+          "Custom vinyl or acrylic name signage",
+          "Floral styling (1–3 small arrangements) or balloon styling (approx. 3–6 metres)"
+        ],
+        "addOns": [
+          "Tables arrangement (sheets, centrepieces, candles)",
+          "Antique baby high chair",
+          "Clear adult-size acrylic chairs",
+          "Backdrop draping",
+          "Large cake table",
+          "Love chair and small coffee table",
+          "Welcome signs: standard or custom printed on foam/fabric"
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Standard Package",
+        "subtitle": "Full & Refined",
+        "price": "$650 - $950",
+        "description": "Ideal for birthdays or larger spaces. A refined, fuller setup with extra flair.",
+        "gradient": "from-rose-600 to-pink-700",
+        "icon": "💐",
+        "popular": true,
+        "image": "https://i.ibb.co/kstDDCnp/Writing-2.png",
+        "includes": [
+          "2 styled backdrops or 1 large arch + 1 backdrop",
+          "3–6 floral arrangements",
+          "1–3 cake plinths",
+          "Custom vinyl or acrylic name signage",
+          "Balloon styling (approx. 6–9 metres), styled to complement the setup",
+          "Up to 5 centrepieces"
+        ],
+        "addOns": [
+          "Tables arrangement (sheets, centrepieces, candles)",
+          "Antique baby high chair",
+          "Clear adult-size acrylic chairs",
+          "Backdrop draping",
+          "Large cake table",
+          "Love chair and small coffee table",
+          "Welcome signs: standard or custom printed on foam/fabric"
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Luxury Package",
+        "subtitle": "Grand & Unforgettable",
+        "price": "$1,000 - $3,000",
+        "description": "For milestone events or large celebrations. A breathtaking, fully customised setup.",
+        "gradient": "from-amber-500 to-orange-600",
+        "icon": "👑",
+        "image": "https://i.ibb.co/My2FKhq8/Writing-2.png",
+        "includes": [
+          "Up to 3 styled backdrops",
+          "3–5 cake plinths",
+          "7–9 flower arrangements",
+          "Custom acrylic or foam cutout signage",
+          "8–14 floor sand candles",
+          "8–15 floral centrepieces",
+          "Balloon styling (approx. 9–12 metres), fully customised",
+          "Custom backdrop illustration with package over $1250",
+          "Customised drape up to 6 metres with package over $1500",
+          "1m foam letters with acrylic name on top with package over $1500"
+        ],
+        "addOns": [
+          "Tables arrangement (sheets, extra centrepieces, extra candles)",
+          "Antique baby high chair",
+          "Clear adult-size acrylic chairs",
+          "Large cake table",
+          "Love chair and small coffee tables",
+          "Welcome signs: standard or custom printed on foam/fabric"
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Bespoke Package",
+        "subtitle": "Fully Personalised",
+        "price": "Starting from $650+",
+        "description": "For those who want a one-of-a-kind event. Perfect for themed birthdays, baptisms, or any unique celebration.",
+        "gradient": "from-indigo-600 to-purple-700",
+        "icon": "✨",
+        "image": "https://i.ibb.co/LX75BzyN/Elegant-wedding-branding-design.png",
+        "includes": [
+          "Custom mockup design after discussing your ideas",
+          "Fully personalised backdrops, drapes, props, and décor",
+          "Custom cutout signage, themed installations, and unique elements",
+          "Balloon and floral styling fully designed to suit your theme"
+        ],
+        "addOns": [
+          "Everything can be added to create a fully personalised experience"
+        ]
+      }
+    ]
+  }
+

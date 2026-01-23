@@ -12,6 +12,7 @@ import Home from "./pages/Home/Home";
 import AboutUsSection from "./pages/OurStory/OurStory.jsx";
 import TermsAndConditions from "./pages/TermsAndConditions/TermsAndConditions.jsx";
 import PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPloicy.jsx";
+import EventsPackages from "./pages/EventsPackages/EventsPackages.jsx";
 function App() {
   return (
     <>
@@ -33,6 +34,7 @@ function App() {
                 element={<TermsAndConditions />}
               />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/events-packages" element={<EventsPackages />} />
             </Routes>
           </main>
           <Footer />

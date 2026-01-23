@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 function ServicePackage() {
-  const [selectedPackage, setSelectedPackage] = useState(null);
-
   const packages = [
     {
       id: 1,
@@ -20,6 +18,7 @@ function ServicePackage() {
         "Floral Arrangements",
         "Bridal House Setup",
       ],
+      to: "/wedding-packages",
     },
     {
       id: 2,
@@ -37,18 +36,9 @@ function ServicePackage() {
         "Engagement Events",
         "Custom Themes",
       ],
+      to: "/events-packages",
     },
   ];
-
-  const openPackageDetails = (pkg) => {
-    setSelectedPackage(pkg);
-    // This will be connected to a detailed page later
-    console.log(`Opening details for: ${pkg.title}`);
-  };
-
-  const closePackageDetails = () => {
-    setSelectedPackage(null);
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-rose-50/30 to-white">
@@ -57,16 +47,13 @@ function ServicePackage() {
         <div className="absolute inset-0 w-full h-full">
           <img
             className="absolute inset-0 w-full h-full object-cover"
-            src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1600&q=80"
+            src="https://i.ibb.co/bgs3pTrm/IMG-6304.jpg"
             alt="Service Packages"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
         </div>
 
         <div className="relative z-10 text-center px-4 max-w-4xl">
-          <div className="mb-4">
-            <span className="text-5xl animate-pulse">✨</span>
-          </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-4 leading-tight">
             Our Service Packages
           </h1>
@@ -95,9 +82,9 @@ function ServicePackage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {packages.map((pkg) => (
-            <div
+            <Link
+              to={pkg.to}
               key={pkg.id}
-              onClick={() => openPackageDetails(pkg)}
               className="group relative rounded-3xl overflow-hidden bg-white shadow-2xl hover:shadow-rose-500/20 transition-all duration-500 cursor-pointer transform hover:-translate-y-2"
             >
               {/* Image Section */}
@@ -170,65 +157,10 @@ function ServicePackage() {
 
               {/* Hover Border Effect */}
               <div className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-rose-400/50 transition-all duration-500 pointer-events-none"></div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
-
-      {/* Temporary Modal (will be replaced with actual page navigation) */}
-      {selectedPackage && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
-          <div className="relative bg-white rounded-3xl max-w-2xl w-full p-8 md:p-12">
-            <button
-              onClick={closePackageDetails}
-              className="absolute top-6 right-6 w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-all"
-            >
-              <svg
-                className="w-5 h-5 text-gray-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-
-            <div className="text-center">
-              <span className="text-6xl mb-4 inline-block">
-                {selectedPackage.icon}
-              </span>
-              <h2 className="text-3xl md:text-4xl font-serif text-gray-900 mb-4">
-                {selectedPackage.title}
-              </h2>
-              <p className="text-rose-600 text-lg mb-6">
-                {selectedPackage.subtitle}
-              </p>
-              <p className="text-gray-600 mb-8">
-                {selectedPackage.description}
-              </p>
-
-              <div className="bg-rose-50 rounded-2xl p-6 mb-8">
-                <p className="text-gray-700 text-sm">
-                  <strong>Coming Soon:</strong> Detailed package information,
-                  pricing tiers, and booking options will be available here.
-                </p>
-              </div>
-
-              <button
-                onClick={closePackageDetails}
-                className={`px-8 py-3 bg-gradient-to-r ${selectedPackage.gradient} text-white rounded-full font-medium hover:shadow-xl transition-all`}
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Info Section */}
       <section className="max-w-4xl mx-auto px-6 pb-20 text-center">
