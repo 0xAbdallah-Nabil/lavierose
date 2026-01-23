@@ -7,7 +7,6 @@
       "subtitle": "Intimate and elegant, perfect for cherished celebrations with your closest loved ones.",
       "description": "Create beautiful memories with an intimate celebration designed for your closest family and friends. Every detail thoughtfully curated to make your special day unforgettable.",
       "image": "https://i.ibb.co/Mx5gF5Hv/DJI-20251010-153305-369.jpg",
-      "icon": "💝",
       "gradient": "from-rose-400 to-pink-500",
       "includes": [
         "Bride & Groom Houses: 3×3 m drapes",
@@ -34,7 +33,6 @@
       "subtitle": "Elegant and refined, perfect for medium-sized weddings or larger venues.",
       "description": "A perfect balance of elegance and sophistication for medium-sized celebrations. Create timeless memories with refined styling and beautiful floral arrangements throughout your venue.",
       "image": "https://i.ibb.co/PGQpJP7F/8-CF9-D554-D52-F-4-C89-8-B0-F-8556-E9574-C9-F.jpg",
-      "icon": "💍",
       "gradient": "from-pink-500 to-rose-500",
       "includes": [
         "Bride & Groom Houses: Drapes 3–6 m",
@@ -59,12 +57,10 @@
     {
       "id": 3,
       "name": "Luxury Wedding Package",
-      "price": "$4,500–$6,500+",
+      "price": "$4,500–$6,500",
       "subtitle": "Lavish and unforgettable, designed to create breathtaking moments.",
       "description": "Experience the pinnacle of wedding elegance with our luxury package. Every space of your wedding day transformed into a breathtaking celebration of your love story.",
       "image": "https://i.ibb.co/bgs3pTrm/IMG-6304.jpg",
-      "popular": false,
-      "icon": "👑",
       "gradient": "from-rose-500 to-pink-600",
       "includes": [
         "Bride & Groom Houses: Drapes 6–12 m",
@@ -93,7 +89,6 @@
       "subtitle": "The ultimate in romance and luxury, designed entirely around your dreams.",
       "description": "Your wedding, your way. Every detail, every colour, every element curated to create a wedding as unique as your love story. This is where dreams become reality.",
       "image": "https://i.ibb.co/LX75BzyN/Elegant-wedding-branding-design.png",
-      "icon": "✨",
       "gradient": "from-pink-600 to-purple-600",
       "includes": [
         "Bride & Groom Houses: Custom draping (8–12 m)",

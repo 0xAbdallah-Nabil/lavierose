@@ -23,21 +23,25 @@ function PackageDetails({ selectedPackage, closeModal }) {
         </button>
 
         {/* Modal Header */}
-        <div
-          className={`bg-gradient-to-r ${selectedPackage.gradient} p-8 text-white`}
-        >
-          <div className="flex items-center gap-4 mb-4">
-            <span className="text-6xl">{selectedPackage.icon}</span>
-            <div>
-              <h3 className="text-3xl font-serif mb-1">
-                {selectedPackage.name}
-              </h3>
-              <p className="text-xl text-white/90">
-                {selectedPackage.subtitle}
-              </p>
+        <div className={`relative p-8 text-white`}>
+          <img
+            src="https://i.ibb.co/KxtC4fcS/Untitled-design-1.png"
+            alt=""
+            className="absolute bottom-0 right-0 w-full h-full transform object-cover"
+          />
+          <div className="relative z-20">
+            <div className="flex items-center gap-4 mb-4">
+              <div>
+                <h3 className="text-3xl font-serif mb-1">
+                  {selectedPackage.name}
+                </h3>
+                <p className="text-lg text-white/90">
+                  {selectedPackage.subtitle}
+                </p>
+              </div>
             </div>
+            <div className="text-4xl font-bold">{selectedPackage.price}</div>
           </div>
-          <div className="text-4xl font-bold">{selectedPackage.price}</div>
         </div>
 
         {/* Modal Content */}

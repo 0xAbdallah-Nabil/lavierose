@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function EventsPackagesDetails({ selectedPackage, closeModal }) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 animate-fadeIn">
@@ -23,21 +25,25 @@ function EventsPackagesDetails({ selectedPackage, closeModal }) {
         </button>
 
         {/* Modal Header */}
-        <div
-          className={`bg-linear-to-r ${selectedPackage.gradient} p-8 text-white`}
-        >
-          <div className="flex items-center gap-4 mb-4">
-            <span className="text-6xl">{selectedPackage.icon}</span>
-            <div>
-              <h3 className="text-3xl font-serif mb-1">
-                {selectedPackage.name}
-              </h3>
-              <p className="text-xl text-white/90">
-                {selectedPackage.subtitle}
-              </p>
+        <div className={`p-8 text-white relative overflow-hidden`}>
+          <img
+            src="https://i.ibb.co/KxtC4fcS/Untitled-design-1.png"
+            alt=""
+            className="absolute bottom-0 right-0 w-full h-full  transform object-cover "
+          />
+          <div className="z-20 relative">
+            <div className="flex items-center gap-4 mb-4">
+              <div>
+                <h3 className="text-3xl font-serif mb-1">
+                  {selectedPackage.name}
+                </h3>
+                <p className="text-xl text-white/90">
+                  {selectedPackage.subtitle}
+                </p>
+              </div>
             </div>
+            <div className="text-4xl font-bold">{selectedPackage.price}</div>
           </div>
-          <div className="text-4xl font-bold">{selectedPackage.price}</div>
         </div>
 
         {/* Modal Content */}
@@ -84,7 +90,7 @@ function EventsPackagesDetails({ selectedPackage, closeModal }) {
           {/* Action Button */}
           <Link
             to="/contact-us"
-            className={`w-full py-4 rounded-full font-semibold text-white bg-linear-to-r ${selectedPackage.gradient} hover:shadow-xl transition-all duration-300 text-lg`}
+            className={`block w-full py-4 rounded-full font-semibold text-white text-center bg-linear-to-r ${selectedPackage.gradient} hover:shadow-xl transition-all duration-300 text-lg`}
           >
             Book This Package Now
           </Link>

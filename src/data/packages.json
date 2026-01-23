@@ -1,0 +1,36 @@
+{
+  "Pck": [
+    {
+      "id": 1,
+      "title": "Wedding Packages",
+      "subtitle": "Your dream wedding, perfectly styled",
+      "description": "Comprehensive wedding styling packages designed to bring your vision to life with elegance and sophistication.",
+      "image": "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1200&q=80",
+      "icon": "💍",
+      "gradient": "from-rose-500 to-pink-600",
+      "features": [
+        "Ceremony Styling",
+        "Reception Decor",
+        "Floral Arrangements",
+        "Bridal House Setup"
+      ],
+      "to": "/wedding-packages"
+    },
+    {
+      "id": 2,
+      "title": "Events Packages",
+      "subtitle": "Celebrations that leave lasting impressions",
+      "description": "Tailored event styling packages for birthdays, baby showers, engagements, and all special occasions.",
+      "image": "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1200&q=80",
+      "icon": "🎉",
+      "gradient": "from-purple-500 to-pink-600",
+      "features": [
+        "Birthday Parties",
+        "Baby Celebrations",
+        "Engagement Events",
+        "Custom Themes"
+      ],
+      "to": "/events-packages"
+    }
+  ]
+}

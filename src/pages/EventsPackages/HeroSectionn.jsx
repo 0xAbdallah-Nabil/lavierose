@@ -1,10 +1,13 @@
 function HeroSection() {
   return (
-    <div className="relative bg-linear-to-r from-purple-900 via-purple-800 to-rose-900 py-20 px-6 overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-10 left-10 w-32 h-32 border-4 border-white rounded-full"></div>
-        <div className="absolute bottom-10 right-10 w-48 h-48 border-4 border-white rounded-full"></div>
-        <div className="absolute top-1/2 left-1/3 w-24 h-24 border-4 border-white rounded-full"></div>
+    <main className="relative flex justify-center items-center h-[60vh] w-full overflow-hidden">
+      <div className="absolute inset-0 w-full h-full">
+        <img
+          className="absolute inset-0 w-full h-full object-cover"
+          src="https://i.ibb.co/Q7Mwh0wc/IMG-7580.png"
+          alt="Service Packages"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
       </div>
 
       <div className="max-w-6xl mx-auto text-center relative z-10">
@@ -19,7 +22,7 @@ function HeroSection() {
           unforgettable experiences tailored to your vision
         </p>
       </div>
-    </div>
+    </main>
   );
 }
 

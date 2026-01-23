@@ -1,68 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import HeroSection from "./HeroSection.jsx";
+import pck from "../../data/packages.json";
 function ServicePackage() {
-  const packages = [
-    {
-      id: 1,
-      title: "Wedding Packages",
-      subtitle: "Your dream wedding, perfectly styled",
-      description:
-        "Comprehensive wedding styling packages designed to bring your vision to life with elegance and sophistication.",
-      image:
-        "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1200&q=80",
-      icon: "💍",
-      gradient: "from-rose-500 to-pink-600",
-      features: [
-        "Ceremony Styling",
-        "Reception Decor",
-        "Floral Arrangements",
-        "Bridal House Setup",
-      ],
-      to: "/wedding-packages",
-    },
-    {
-      id: 2,
-      title: "Events Packages",
-      subtitle: "Celebrations that leave lasting impressions",
-      description:
-        "Tailored event styling packages for birthdays, baby showers, engagements, and all special occasions.",
-      image:
-        "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1200&q=80",
-      icon: "🎉",
-      gradient: "from-purple-500 to-pink-600",
-      features: [
-        "Birthday Parties",
-        "Baby Celebrations",
-        "Engagement Events",
-        "Custom Themes",
-      ],
-      to: "/events-packages",
-    },
-  ];
+  const packages = pck.Pck;
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-rose-50/30 to-white">
       {/* Hero Section */}
-      <main className="relative flex justify-center items-center h-[60vh] w-full overflow-hidden">
-        <div className="absolute inset-0 w-full h-full">
-          <img
-            className="absolute inset-0 w-full h-full object-cover"
-            src="https://i.ibb.co/bgs3pTrm/IMG-6304.jpg"
-            alt="Service Packages"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
-        </div>
 
-        <div className="relative z-10 text-center px-4 max-w-4xl">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-4 leading-tight">
-            Our Service Packages
-          </h1>
-          <p className="text-lg sm:text-xl md:text-2xl text-rose-200 font-light">
-            Curated collections designed to make your celebration extraordinary
-          </p>
-        </div>
-      </main>
-
+      <HeroSection />
       {/* Packages Section */}
       <section className="max-w-7xl mx-auto px-6 py-20">
         <div className="text-center mb-16">
@@ -96,14 +43,6 @@ function ServicePackage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
 
-                {/* Icon Badge */}
-                <div className="absolute top-6 right-6">
-                  <div
-                    className={`w-16 h-16 rounded-full bg-gradient-to-br ${pkg.gradient} flex items-center justify-center shadow-2xl transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12`}
-                  >
-                    <span className="text-3xl">{pkg.icon}</span>
-                  </div>
-                </div>
 
                 {/* Title Overlay */}
                 <div className="absolute bottom-0 left-0 right-0 p-8">

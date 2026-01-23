@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import CallToAction from "./CallToAction.jsx";
 import WeddingPackagesData from "../../data/WeddingPackages.json";
 import PackageDetails from "./PackageDetails.jsx";
+import HeroSection from "./HeroSectionn.jsx";
 const WeddingPackages = () => {
   const [selectedPackage, setSelectedPackage] = useState(null);
 
@@ -17,26 +18,7 @@ const WeddingPackages = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-rose-50 via-white to-pink-50">
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-r from-rose-900 via-pink-800 to-rose-900 py-20 px-6 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-32 h-32 border-4 border-white rounded-full"></div>
-          <div className="absolute bottom-10 right-10 w-48 h-48 border-4 border-white rounded-full"></div>
-          <div className="absolute top-1/2 left-1/3 w-24 h-24 border-4 border-white rounded-full"></div>
-        </div>
-
-        <div className="max-w-6xl mx-auto text-center relative z-10">
-          <h1 className="text-5xl md:text-6xl font-serif text-white mb-6">
-            Wedding Packages
-          </h1>
-          <p className="text-xl md:text-2xl text-rose-100 mb-4">
-            LaVie Rose Weddings & Events
-          </p>
-          <p className="text-lg text-pink-200 max-w-3xl mx-auto">
-            From intimate ceremonies to grand celebrations, we create
-            unforgettable moments tailored to your love story
-          </p>
-        </div>
-      </div>
+      <HeroSection />
 
       {/* Packages Grid - Image Cards */}
       <section className="max-w-7xl mx-auto px-6 py-16">

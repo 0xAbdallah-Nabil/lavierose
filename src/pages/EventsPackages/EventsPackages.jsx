@@ -5,7 +5,7 @@ import CallToAction from "./CallToAction.jsx";
 import EventsPackagesDetails from "./EventsPackagesDetails.jsx";
 import EventsGrid from "./EventsGrid.jsx";
 import ImportantNote from "./ImportantNote.jsx";
-import HeroSection from "./HeroSection.jsx";
+import HeroSection from "./HeroSectionn.jsx";
 import "./Style.css";
 function EventsPackages() {
   const [selectedPackage, setSelectedPackage] = useState(null);
