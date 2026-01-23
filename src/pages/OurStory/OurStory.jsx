@@ -1,5 +1,5 @@
 import React from "react";
-
+import CallToAction from "./CallToAction";
 function AboutUsSection() {
   return (
     <section className="min-h-screen bg-gradient-to-b from-white to-rose-50/30">
@@ -85,6 +85,7 @@ function AboutUsSection() {
       <div className="absolute top-1/4 right-10 opacity-10 pointer-events-none hidden xl:block">
         <span className="text-9xl">🌹</span>
       </div>
+      <CallToAction />
     </section>
   );
 }
