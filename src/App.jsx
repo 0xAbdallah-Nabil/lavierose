@@ -10,6 +10,8 @@ import CartPage from "./pages/CartPage/CartPage";
 import CheckOut from "./pages/CheckOut/CheckOut";
 import Home from "./pages/Home/Home";
 import AboutUsSection from "./pages/OurStory/OurStory.jsx";
+import TermsAndConditions from "./pages/TermsAndConditions/TermsAndConditions.jsx";
+import PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPloicy.jsx";
 function App() {
   return (
     <>
@@ -26,6 +28,11 @@ function App() {
               <Route path="/decor-hire" element={<DecoreHire />} />
               <Route path="/services" element={<ServicesPage />} />
               <Route path="/cart-page" element={<CartPage />} />
+              <Route
+                path="/terms-and-conditions"
+                element={<TermsAndConditions />}
+              />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             </Routes>
           </main>
           <Footer />
