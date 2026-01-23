@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Send, CheckCircle, AlertCircle } from "lucide-react";
 import countriesList from "../../data/countries.json";
+
 function ContactForm() {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -9,12 +10,13 @@ function ContactForm() {
     newsletter: false,
     phone: "",
     country: "Australia",
-    eventType: "",
+    selectionType: "", // "package" or "service"
+    packageType: "",
+    packageCategory: "",
     services: "",
     eventDate: "",
     referralSource: "",
     guestCount: "",
-    budget: "",
     message: "",
   });
 
@@ -40,10 +42,27 @@ function ContactForm() {
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: type === "checkbox" ? checked : value,
-    }));
+    const newValue = type === "checkbox" ? checked : value;
+
+    setFormData((prev) => {
+      const updated = {
+        ...prev,
+        [name]: newValue,
+      };
+
+      // Reset package fields if switching to services
+      if (name === "selectionType") {
+        if (value === "service") {
+          updated.packageType = "";
+          updated.packageCategory = "";
+        } else if (value === "package") {
+          updated.services = "";
+        }
+      }
+
+      return updated;
+    });
+
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: "" }));
     }
@@ -61,13 +80,24 @@ function ContactForm() {
       newErrors.email = "Please enter a valid email";
     }
     if (!formData.phone.trim()) newErrors.phone = "Phone number is required";
-    if (!formData.eventType)
-      newErrors.eventType = "Please select an event type";
-    if (!formData.services) newErrors.services = "Please select a service";
+
+    // Validate selection type
+    if (!formData.selectionType)
+      newErrors.selectionType = "Please choose package or services";
+
+    // Validate based on selection type
+    if (formData.selectionType === "package") {
+      if (!formData.packageType)
+        newErrors.packageType = "Please select a package type";
+      if (!formData.packageCategory)
+        newErrors.packageCategory = "Please select a package category";
+    } else if (formData.selectionType === "service") {
+      if (!formData.services) newErrors.services = "Please select a service";
+    }
+
     if (!formData.eventDate) newErrors.eventDate = "Event date is required";
     if (!formData.guestCount.trim())
       newErrors.guestCount = "Guest count is required";
-    if (!formData.budget.trim()) newErrors.budget = "Budget is required";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -100,7 +130,7 @@ function ContactForm() {
     try {
       // eslint-disable-next-line no-unused-vars
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbzo9BjgD1VGhNtbtj_OmGsKWZcNwaWnF6f_qcVjNnfvCuWi5r4OKg6Icybzir09i1c4/exec",
+        "https://script.google.com/macros/s/AKfycbyZOm-2qPIGogwdTtInaEGyw-Nf8CvYEz38x8nPWRfcnonW6c_g5eKy3MO1HnlK-w/exec",
         {
           method: "POST",
           mode: "no-cors",
@@ -128,12 +158,13 @@ function ContactForm() {
         newsletter: false,
         phone: "",
         country: "Australia",
-        eventType: "",
+        selectionType: "",
+        packageType: "",
+        packageCategory: "",
         services: "",
         eventDate: "",
         referralSource: "",
         guestCount: "",
-        budget: "",
         message: "",
       });
 
@@ -293,53 +324,152 @@ function ContactForm() {
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Type of Event <span className="text-red-500">*</span>
+              I'm interested in <span className="text-red-500">*</span>
             </label>
-            <select
-              name="eventType"
-              value={formData.eventType}
-              onChange={handleChange}
-              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-transparent outline-none transition ${
-                errors.eventType ? "border-red-500" : "border-gray-300"
-              }`}
-            >
-              <option value="">Select event type</option>
-              <option value="Corporate">Corporate</option>
-              <option value="Social">Social</option>
-              <option value="Wedding">Wedding</option>
-              <option value="Other">Other</option>
-            </select>
-            {errors.eventType && (
-              <p className="text-red-500 text-sm mt-1">{errors.eventType}</p>
+            <div className="grid grid-cols-2 gap-4">
+              <button
+                type="button"
+                onClick={() =>
+                  handleChange({
+                    target: { name: "selectionType", value: "package" },
+                  })
+                }
+                className={`px-6 py-4 rounded-lg border-2 font-medium transition-all ${
+                  formData.selectionType === "package"
+                    ? "border-rose-500 bg-rose-50 text-rose-700"
+                    : "border-gray-300 bg-white text-gray-700 hover:border-rose-300"
+                }`}
+              >
+                Packages
+              </button>
+              <button
+                type="button"
+                onClick={() =>
+                  handleChange({
+                    target: { name: "selectionType", value: "service" },
+                  })
+                }
+                className={`px-6 py-4 rounded-lg border-2 font-medium transition-all ${
+                  formData.selectionType === "service"
+                    ? "border-rose-500 bg-rose-50 text-rose-700"
+                    : "border-gray-300 bg-white text-gray-700 hover:border-rose-300"
+                }`}
+              >
+                Individual Services
+              </button>
+            </div>
+            {errors.selectionType && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.selectionType}
+              </p>
             )}
           </div>
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              What services are you interested in?{" "}
-              <span className="text-red-500">*</span>
-            </label>
-            <select
-              name="services"
-              value={formData.services}
-              onChange={handleChange}
-              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-transparent outline-none transition ${
-                errors.services ? "border-red-500" : "border-gray-300"
-              }`}
-            >
-              <option value="">Select services</option>
-              <option value="Full Event Management & Decor">
-                Full Event Management & Decor
-              </option>
-              <option value="Decor & Styling">Decor & Styling</option>
-              <option value="Decor & On-the-day Coordination">
-                Decor & On-the-day Coordination
-              </option>
-            </select>
-            {errors.services && (
-              <p className="text-red-500 text-sm mt-1">{errors.services}</p>
-            )}
-          </div>
+          {/* Show Package fields if package is selected */}
+          {formData.selectionType === "package" && (
+            <>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Package Type <span className="text-red-500">*</span>
+                </label>
+                <select
+                  name="packageType"
+                  value={formData.packageType}
+                  onChange={handleChange}
+                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-transparent outline-none transition ${
+                    errors.packageType ? "border-red-500" : "border-gray-300"
+                  }`}
+                >
+                  <option value="">Select package type</option>
+                  <option value="Wedding">Wedding</option>
+                  <option value="Events">Events</option>
+                </select>
+                {errors.packageType && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.packageType}
+                  </p>
+                )}
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Package Category <span className="text-red-500">*</span>
+                </label>
+                <select
+                  name="packageCategory"
+                  value={formData.packageCategory}
+                  onChange={handleChange}
+                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-transparent outline-none transition ${
+                    errors.packageCategory
+                      ? "border-red-500"
+                      : "border-gray-300"
+                  }`}
+                >
+                  <option value="">Select package category</option>
+                  <option value="Small">Small</option>
+                  <option value="Standard">Standard</option>
+                  <option value="Luxury">Luxury</option>
+                  <option value="Bespoke">Bespoke</option>
+                </select>
+                {errors.packageCategory && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.packageCategory}
+                  </p>
+                )}
+              </div>
+            </>
+          )}
+
+          {/* Show Services field if service is selected */}
+          {formData.selectionType === "service" && (
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                What services are you interested in?{" "}
+                <span className="text-red-500">*</span>
+              </label>
+              <select
+                name="services"
+                value={formData.services}
+                onChange={handleChange}
+                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-transparent outline-none transition ${
+                  errors.services ? "border-red-500" : "border-gray-300"
+                }`}
+              >
+                <option value="">Select services</option>
+                <option value="Wedding Styling">Wedding Styling</option>
+                <option value="Event Styling (Balloon & Props)">
+                  Event Styling (Balloon & Props)
+                </option>
+                <option value="Bridal, Bride & Groom House Styling">
+                  Bridal, Bride & Groom House Styling
+                </option>
+                <option value="Ceremony Styling">Ceremony Styling</option>
+                <option value="Birthdays">Birthdays</option>
+                <option value="Bridal Shower & Floral Styling">
+                  Bridal Shower & Floral Styling
+                </option>
+                <option value="Centrepieces and Welcome Sign">
+                  Centrepieces and Welcome Sign
+                </option>
+                <option value="Christening and Holy Communion">
+                  Christening and Holy Communion
+                </option>
+                <option value="Engagement and Henna">
+                  Engagement and Henna
+                </option>
+                <option value="Gender Reveal, Baby Welcoming">
+                  Gender Reveal, Baby Welcoming
+                </option>
+                <option value="Graduation and Grand Opening">
+                  Graduation and Grand Opening
+                </option>
+                <option value="Designs made by us">Designs made by us</option>
+              </select>
+              {errors.services && (
+                <p className="text-red-500 text-sm mt-1">{errors.services}</p>
+              )}
+            </div>
+          )}
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -371,49 +501,31 @@ function ContactForm() {
             >
               <option value="">Select an option</option>
               <option value="Friends/Family">Friends/Family</option>
-              <option value="Online">Online</option>
-              <option value="Social Media">Social Media</option>
+              <option value="Instagram">Instagram</option>
+              <option value="Facebook">Facebook</option>
+              <option value="Google Search">Google Search</option>
+              <option value="Wedding Directory">Wedding Directory</option>
               <option value="Other">Other</option>
             </select>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Guest Count <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                name="guestCount"
-                value={formData.guestCount}
-                onChange={handleChange}
-                placeholder="e.g., 100-150"
-                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-transparent outline-none transition ${
-                  errors.guestCount ? "border-red-500" : "border-gray-300"
-                }`}
-              />
-              {errors.guestCount && (
-                <p className="text-red-500 text-sm mt-1">{errors.guestCount}</p>
-              )}
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Total Budget <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                name="budget"
-                value={formData.budget}
-                onChange={handleChange}
-                placeholder="e.g., $20,000 - $30,000"
-                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-transparent outline-none transition ${
-                  errors.budget ? "border-red-500" : "border-gray-300"
-                }`}
-              />
-              {errors.budget && (
-                <p className="text-red-500 text-sm mt-1">{errors.budget}</p>
-              )}
-            </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Guest Count <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              name="guestCount"
+              value={formData.guestCount}
+              onChange={handleChange}
+              placeholder="e.g., 100-150"
+              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-transparent outline-none transition ${
+                errors.guestCount ? "border-red-500" : "border-gray-300"
+              }`}
+            />
+            {errors.guestCount && (
+              <p className="text-red-500 text-sm mt-1">{errors.guestCount}</p>
+            )}
           </div>
 
           <div>
